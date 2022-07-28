@@ -8,7 +8,6 @@ public:
     void displaySprite(int x, int y) override;
     void setScore(unsigned long score);
 private:
-    unsigned int width;
     unsigned long score;
 };
 

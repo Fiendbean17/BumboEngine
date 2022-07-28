@@ -560,14 +560,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			SetBkColor(hDCMem, blackTextColor);
 			for (int i = 0; i < height_G; i++)
 				for (int j = 0; j < width_G; j++)
-					if (std::string(1, screen_matrix_G[i][j]).c_str() != std::string(1, ' '))
+					if (screen_matrix_G[i][j] != ' ')
 					{
 						COLORREF whiteTextColor = screen_matrix_G[i][j].getColor();
 						if (SetTextColor(hDCMem, whiteTextColor) == CLR_INVALID)
 						{
 							PostQuitMessage(1);
 						}
-						ExtTextOutA(hDCMem, j * 10, i * 15, ETO_CLIPPED, &rect, std::string(1, screen_matrix_G[i][j]).c_str(), 1, NULL);
+						char c = screen_matrix_G[i][j];
+						ExtTextOutA(hDCMem, j * 10, i * 15, ETO_CLIPPED, &rect, &c, 1, NULL);
 					}
 
 			// Copy window image/bitmap to screen

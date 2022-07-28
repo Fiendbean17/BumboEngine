@@ -1,6 +1,6 @@
 #include "ScoreDisplay.h"
 
-ScoreDisplay::ScoreDisplay(int width, Matrix &screen_matrix): width(width + 2), Sprite(width + 2, 3, screen_matrix)
+ScoreDisplay::ScoreDisplay(int width, Matrix &screen_matrix): score(0), Sprite(width + 2, 3, screen_matrix)
 {
 }
 
