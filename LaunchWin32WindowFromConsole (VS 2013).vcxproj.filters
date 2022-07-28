@@ -294,6 +294,9 @@
     <ClCompile Include="AttackPattern_SnakeHailStorm.cpp">
       <Filter>Source Files\Battle\Multi-Attack Patterns</Filter>
     </ClCompile>
+    <ClCompile Include="ScoreDisplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinMainParameters.h">
@@ -634,6 +637,9 @@
     </ClInclude>
     <ClInclude Include="AttackPattern_SnakeHailStorm.h">
       <Filter>Header Files\Battle\Multi-Attack Patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreDisplay.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

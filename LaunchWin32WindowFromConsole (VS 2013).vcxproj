@@ -109,9 +109,8 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -218,6 +217,7 @@
     <ClCompile Include="PlayerSprite.cpp" />
     <ClCompile Include="Popup.cpp" />
     <ClCompile Include="RGBA.cpp" />
+    <ClCompile Include="ScoreDisplay.cpp" />
     <ClCompile Include="SoundtrackManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="PopupWithCollision.cpp" />
@@ -323,6 +323,7 @@
     <ClInclude Include="PlayerSprite.h" />
     <ClInclude Include="Popup.h" />
     <ClInclude Include="RGBA.h" />
+    <ClInclude Include="ScoreDisplay.h" />
     <ClInclude Include="ScreenPosition.h" />
     <ClInclude Include="SoundtrackManager.h" />
     <ClInclude Include="SplashScreen.h" />
