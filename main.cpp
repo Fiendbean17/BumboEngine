@@ -18,11 +18,11 @@ TCHAR szTitle[MAX_LOADSTRING];					// The title bar text
 TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 
 // Global (To main.cpp only) Variables for width, height and the output display screens
-bool should_exit_G = false;
-int width_G = 79;
-int height_G = 35;
-BitmapDefinition bitmap_G(0, 160, 0);
-Matrix screen_matrix_G(width_G, height_G);
+static bool should_exit_G = false;
+static int width_G = 79;
+static int height_G = 35;
+static BitmapDefinition bitmap_G(0, 160, 0);
+static Matrix screen_matrix_G(width_G, height_G);
 
 void createDirectory(HINSTANCE hInstance, TCHAR directory[MAX_PATH]);
 void createMP3File(HINSTANCE hInstance, TCHAR directory[MAX_PATH], TCHAR file_name[MAX_PATH], int MP3_ID);
@@ -35,52 +35,7 @@ BOOL				InitInstance(HINSTANCE, int);
 LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
 
-// ISO C++ conformant entry point. The project properties explicitly sets this as the entry point in the manner
-// documented for the linker's /ENTRY option: http://msdn.microsoft.com/en-us/library/f9t8842e.aspx . As per
-// the documentation, the value set as the entry point is "mainCRTStartup", not "main". Every C or C++ program
-// must perform any initialization required by the language standards before it begins executing our code. In
-// Visual C++, this is done by the *CRTStartup functions, each of which goes on to call the developer's entry
-// point function.
-int main(int /*argc*/, char* /*argv*/[]) {
-	// Use the functions from WinMainParameters.h to get the values that would've been passed to WinMain.
-	// Note that these functions are in the WinMainParameters namespace.
-	HINSTANCE hInstance = GetHInstance();
-	HINSTANCE hPrevInstance = GetHPrevInstance();
-	LPWSTR lpCmdLine = GetLPCmdLine();
-	int nCmdShow = GetNCmdShow();
-
-	// Assert that the values returned are expected.
-	assert(hInstance != nullptr);
-	assert(hPrevInstance == nullptr);
-	assert(lpCmdLine != nullptr);
-
-	// Close the console window. This is not required, but if you do not need the console then it should be
-	// freed in order to release the resources it is using. If you wish to keep the console open and use it
-	// you can remove the call to FreeConsole. If you want to create a new console later you can call
-	// AllocConsole. If you want to use an existing console you can call AttachConsole.
-	int debug_mode = false;
-#ifdef _DEBUG
-	debug_mode = true;
-#endif
-	if (!debug_mode)
-		FreeConsole();
-
-	// ***********************
-	// If you want to avoid creating a console in the first place, you can change the linker /SUBSYSTEM
-	// option in the project properties to WINDOWS as documented here:
-	// http://msdn.microsoft.com/en-us/library/fcc1zstk.aspx . If you do that you should comment out the
-	// above call to FreeConsole since there will not be any console to free. The program will still
-	// function properly. If you want the console back, change the /SUBSYSTEM option back to CONSOLE.
-	// ***********************
-
-	// Note: The remainder of the code in this file comes from the default Visual C++ Win32 Application
-	// template (with a few minor alterations). It serves as an example that the program works, not as an
-	// example of good, modern C++ code style.
-
-	UNREFERENCED_PARAMETER(hPrevInstance);
-	UNREFERENCED_PARAMETER(lpCmdLine);
-
-	// TODO: Place code here.
+int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLine, int nCmdShow) {
 	MSG msg;
 	HACCEL hAccelTable;
 
@@ -100,7 +55,7 @@ int main(int /*argc*/, char* /*argv*/[]) {
 	// Create Temporary Directory for audio files
 	if (GetTempPath(MAX_PATH, buf) == 0)
 		MessageBox(0, buf, _T("Failed to create audio"), 0);
-	TCHAR directory[MAX_PATH] = L"";
+	TCHAR directory[MAX_PATH];
 	TCHAR folder_name[MAX_PATH] = L"\Wenlife\\";
 	_stprintf_s(directory, MAX_PATH, _T("%s%s"), buf, folder_name);
 	CreateDirectory(directory, NULL);
