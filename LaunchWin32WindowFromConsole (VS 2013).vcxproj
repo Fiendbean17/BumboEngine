@@ -221,6 +221,7 @@
     <ClCompile Include="SoundtrackManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="PopupWithCollision.cpp" />
+    <ClCompile Include="SpriteSheet.cpp" />
     <ClCompile Include="StartScreen.cpp" />
     <ClCompile Include="WorldBase.cpp" />
   </ItemGroup>

@@ -87,7 +87,6 @@ private:
 	Inventory &inventory_;
 	ScreenPosition screen_position_;
 	PlayerSprite player_sprite_;
-	SpriteSheet sprite_sheet_;
 
 	CharacterBase *selected_character_;
 	EventBase *selected_event_;
