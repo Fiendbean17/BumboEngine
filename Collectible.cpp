@@ -19,7 +19,7 @@ void Collectible::createWorldSprite()
 	updateColliderCoordinates();
 }
 
-void Collectible::pickupItem()
+void Collectible::collect()
 {
 	if (!pickedUp) {
 		score.addScore(value);
