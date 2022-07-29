@@ -688,7 +688,7 @@ void WorldBase::GENERATE_Collectibles()
 #define IMG_COLLECTIBLE (new Image("/=\\Z|$|Z\\=/Z", "RRRZRYRZRRRZ"))
 #define COLLECTIBLE(x,y,uid,value) collectibles.push_back(new Collectible(x,y,23,9,uid,world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_, score_display, IMG_COLLECTIBLE, value))
 #define COL(x,y,value) COLLECTIBLE(x,y,(++collectibleUIDs),value)
-	COL(50, 403, 50);
+	COL(92, 380, 50);
 	COL(230, 380, 50);
 	COL(240, 280, 100);
 #undef COL
