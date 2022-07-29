@@ -547,41 +547,29 @@ void WorldBase::GENERATE_WorldBorder()
 // creates objects for the cliff area outside the maze. This is the start/end of the game
 void WorldBase::GENERATE_OutsideArea()
 {
-	/* Start of Game ---------- */
-
 	// Outside area / map
 	Texture mountain(320, 300, SpriteSheet::mountain, world_matrix_); // Area 1
 	Texture maze_3(320, 203, SpriteSheet::maze_3, world_matrix_);     // Area 2
 	Texture maze_2(320, 100, SpriteSheet::maze_2, world_matrix_);     // Area 3
+
 	// Fence
 	//Texture fence(1161, 181, SpriteSheet::fence, world_matrix_);
 
-	//// Trees
-	//Texture tree_1(665, 205, SpriteSheet::tree, world_matrix_);
-	//Texture tree_2(700, 210, SpriteSheet::tree, world_matrix_);
-	//Texture tree_3(740, 210, SpriteSheet::tree, world_matrix_);
-	//Texture tree_4(790, 217, SpriteSheet::tree, world_matrix_);
-	//Texture tree_5(830, 192, SpriteSheet::tree, world_matrix_);
-	//Texture tree_6(870, 192, SpriteSheet::tree, world_matrix_);
-	//Texture tree_7(912, 206, SpriteSheet::tree, world_matrix_);
-	//Texture tree_8(950, 203, SpriteSheet::tree, world_matrix_);
-	//Texture tree_9(1096, 173, SpriteSheet::tree, world_matrix_);
+	// Trees
+	Texture tree_1(140, 371, SpriteSheet::tree, world_matrix_);
+	Texture tree_2(170, 374, SpriteSheet::tree, world_matrix_);
+	Texture tree_3(190, 368, SpriteSheet::tree, world_matrix_);
+	Texture tree_4(208, 368, SpriteSheet::tree, world_matrix_);
+	Texture tree_5(255, 368, SpriteSheet::tree, world_matrix_);
+	Texture tree_6(319, 376, SpriteSheet::tree, world_matrix_);
+	Texture tree_7(306, 229, SpriteSheet::tree, world_matrix_);
 
-	//// Rocks
-	//Texture rock_1(685, 240, SpriteSheet::rock, world_matrix_);
-	//Texture rock_2(715, 222, SpriteSheet::rock, world_matrix_);
-	//Texture rock_3(780, 239, SpriteSheet::rock, world_matrix_);
-
-	///* End of Game ---------- */
-
-	//// Trees
-	//Texture tree_10(872, 54, SpriteSheet::tree, world_matrix_);
-	//Texture tree_11(906, 60, SpriteSheet::tree, world_matrix_);
-	//Texture tree_12(953, 51, SpriteSheet::tree, world_matrix_);
-	//Texture tree_13(1019, 46, SpriteSheet::tree, world_matrix_);
-	//Texture tree_14(1044, 43, SpriteSheet::tree, world_matrix_);
-	//Texture tree_15(1069, 41, SpriteSheet::tree, world_matrix_);
-	//Texture tree_16(1105, 47, SpriteSheet::tree, world_matrix_);
+	// Rocks
+	Texture rock_1(213, 328, SpriteSheet::rock, world_matrix_);
+	Texture rock_2(265, 340, SpriteSheet::rock, world_matrix_);
+	Texture rock_3(84, 290, SpriteSheet::rock, world_matrix_);
+	Texture rock_4(151, 276, SpriteSheet::rock, world_matrix_);
+	Texture rock_5(56, 402, SpriteSheet::rock, world_matrix_);
 }
 
 // Creates the walls of the maze as well as objects that should be placed INSIDE the maze
@@ -975,10 +963,10 @@ void WorldBase::GENERATE_Events()
 	//Event_BorderIncident *border_incident = new Event_BorderIncident(10002, 1070, 206, 4, 4, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	//Event_RollCredits *roll_credits = new Event_RollCredits(10021, should_roll_credits_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 
-	Event_TeleportPlayer *teleport_to_area2 = new Event_TeleportPlayer(10001, 294, 378, 9, 3, 240, 355, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportPlayer *teleport_to_area3 = new Event_TeleportPlayer(10004, 125, 265, 9, 3, 128, 227, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportPlayer *teleport_to_area3_hallway = new Event_TeleportPlayer(10005, 341, 225, 9, 3, 68, 179, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportPlayer *teleport_to_final = new Event_TeleportPlayer(10006, 236, 110, 12, 8, 341, 175, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	Event_TeleportPlayer *teleport_to_area2 = new Event_TeleportPlayer(10001, 294, 378, 13, 3, 240, 355, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	Event_TeleportPlayer *teleport_to_area3 = new Event_TeleportPlayer(10004, 125, 265, 13, 3, 128, 227, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	Event_TeleportPlayer *teleport_to_area3_hallway = new Event_TeleportPlayer(10005, 341, 225, 13, 3, 68, 179, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	Event_TeleportPlayer *teleport_to_final = new Event_TeleportPlayer(10006, 236, 110, 13, 7, 341, 175, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	//Event_TeleportPlayer *teleport_to_aki = new Event_TeleportPlayer(10007, 393, 21, 10, 8, 679, 87, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	//Event_TeleportPlayer *teleport_from_aki = new Event_TeleportPlayer(10008, 679, 103, 10, 8, 393, 33, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	//Event_SetupEnding *teleport_to_mini_bosses = new Event_SetupEnding(10009, 731, 59, 10, 8, 857, 65, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
