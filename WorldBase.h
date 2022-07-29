@@ -10,6 +10,7 @@
 #include "SpriteSheet.h"
 #include "Characters.h"
 #include "Events.h"
+#include "ScoreDisplay.h"
 
 // Creates a world for the game to take place in, including trees, pickups, events, etc...
 class WorldBase : MatrixBase
@@ -87,7 +88,8 @@ private:
 	Inventory &inventory_;
 	ScreenPosition screen_position_;
 	PlayerSprite player_sprite_;
-
+	ScoreDisplay score_display;
+	
 	CharacterBase *selected_character_;
 	EventBase *selected_event_;
 };
