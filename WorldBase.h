@@ -11,6 +11,7 @@
 #include "Characters.h"
 #include "Events.h"
 #include "ScoreDisplay.h"
+#include "Collectible.h"
 
 // Creates a world for the game to take place in, including trees, pickups, events, etc...
 class WorldBase : MatrixBase
@@ -32,6 +33,7 @@ private:
 	void teleportPlayer(int position_x, int position_y);
 	void generateWorld();
 	void checkRemovePickup();
+	void checkRemoveCollectible();
 	void checkForItem();
 	void checkForBattle();
 	void checkForEvent();
@@ -53,6 +55,7 @@ private:
 	void GENERATE_NonHostileNPCs();
 	void GENERATE_Signposts();
 	void GENERATE_Pickups();
+	void GENERATE_Collectibles();
 	void GENERATE_AdditionalObjects();
 	void GENERATE_Events();
 
@@ -82,6 +85,7 @@ private:
 	std::vector<Image> fence_lines_;
 	std::vector<Signpost*> signposts_;
 	std::vector<Pickup*> pickups_;
+	std::vector<Collectible*> collectibles;
 	std::vector<CharacterBase*> characters_;
 	std::vector<EventBase*> events_;
 

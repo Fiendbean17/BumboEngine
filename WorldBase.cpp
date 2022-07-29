@@ -61,6 +61,13 @@ void WorldBase::refreshScreen()
 				}
 			is_viewing_popup_ = false;
 			break;
+		case 4: // Collectible
+			for (Collectible *collectible : collectibles)
+				if (collectible->getUniqueObjectID() == getFacingEntity().second)
+				{
+					collectible->collect();
+				}
+			break;
 		default:
 			is_viewing_popup_ = false;
 			break;
@@ -244,6 +251,7 @@ void WorldBase::evaluatePlayerInput()
 		else
 		{
 			checkRemovePickup();
+			checkRemoveCollectible();
 			if (GetAsyncKeyState(VK_SHIFT) & 0x8000) // Running
 			{
 				player_speed_modifier_ = 1;
@@ -360,6 +368,7 @@ void WorldBase::generateWorld()
 	GENERATE_Enemies();
 	GENERATE_NonHostileNPCs();
 	GENERATE_Pickups();
+	GENERATE_Collectibles();
 	GENERATE_Signposts();
 	GENERATE_Events();
 
@@ -370,9 +379,27 @@ void WorldBase::generateWorld()
 void WorldBase::checkRemovePickup()
 {
 	if (is_viewing_popup_ && getFacingEntity().first == 2)
-		for (Pickup *pickup : pickups_)
-			if (pickup->getUniqueObjectID() == getFacingEntity().second)
-				delete(pickup);
+		for (auto itr = pickups_.begin(); itr != pickups_.end(); ++itr) {
+			auto item = *itr;
+			if (item->getUniqueObjectID() == getFacingEntity().second) {
+				pickups_.erase(itr);
+				delete item;
+				break;
+			}
+		}
+}
+
+void WorldBase::checkRemoveCollectible()
+{
+	if(is_viewing_popup_ && getFacingEntity().first == 4)
+		for (auto itr = collectibles.begin(); itr != collectibles.end(); ++itr) {
+			auto item = *itr;
+			if ((*itr)->getUniqueObjectID() == getFacingEntity().second) {
+				collectibles.erase(itr);
+				delete item;
+				break;
+			}
+		}
 }
 
 // Checks whether or not to give the player an item from dialog
@@ -913,6 +940,17 @@ void WorldBase::GENERATE_Pickups()
 	// Displays all pickups
 	for (auto pickup : pickups_)
 		pickup->createWorldSprite();
+}
+
+void WorldBase::GENERATE_Collectibles()
+{
+	Image* imgCollectible = new Image("/=\\Z|$|Z\\=/Z", "RRRZRYRZRRRZ");
+#define COLLECTIBLE(x,y,uid,value) (collectibles.push_back(new Collectible(x,y,23,9,uid,world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_, score_display, *imgCollectible, value)))
+	COLLECTIBLE(750, 250, 31, 50);
+#undef COLLECTIBLE
+	for (auto c : collectibles) {
+		c->createWorldSprite();
+	}
 }
 
 // creates things that don't fit into any other category
