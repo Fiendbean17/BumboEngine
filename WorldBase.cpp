@@ -523,8 +523,9 @@ void WorldBase::GENERATE_OutsideArea()
 	/* Start of Game ---------- */
 
 	// Outside area / map
-	Texture mountain(900, 137, SpriteSheet::mountain, world_matrix_);
-
+	Texture mountain(320, 300, SpriteSheet::mountain, world_matrix_); // Area 1
+	//Texture maze_3(320, 180, SpriteSheet::maze_2, world_matrix_);     // Area 2
+	//Texture maze_2(320, 500, SpriteSheet::maze_3, world_matrix_);     // Area 3
 	// Fence
 	//Texture fence(1161, 181, SpriteSheet::fence, world_matrix_);
 
@@ -560,9 +561,7 @@ void WorldBase::GENERATE_OutsideArea()
 void WorldBase::GENERATE_Maze()
 {
 	// Maze
-	Texture maze_1(300, 137, SpriteSheet::maze_1, world_matrix_);
-	Texture maze_2(300, 1, SpriteSheet::maze_2, world_matrix_);
-	Texture maze_3(900, 1, SpriteSheet::maze_3, world_matrix_);
+	//Texture maze_1(300, 137, SpriteSheet::maze_1, world_matrix_);
 
 	// Rocks
 	//Texture rock_1(457, 86, SpriteSheet::rock, world_matrix_);
