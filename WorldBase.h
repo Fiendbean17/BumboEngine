@@ -33,6 +33,7 @@ private:
 	void teleportPlayer(int position_x, int position_y);
 	void generateWorld();
 	void checkRemovePickup();
+	void checkRemoveCollectible();
 	void checkForItem();
 	void checkForBattle();
 	void checkForEvent();
