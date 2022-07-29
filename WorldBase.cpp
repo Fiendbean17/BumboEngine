@@ -524,8 +524,8 @@ void WorldBase::GENERATE_OutsideArea()
 
 	// Outside area / map
 	Texture mountain(320, 300, SpriteSheet::mountain, world_matrix_); // Area 1
-	//Texture maze_3(320, 180, SpriteSheet::maze_2, world_matrix_);     // Area 2
-	//Texture maze_2(320, 500, SpriteSheet::maze_3, world_matrix_);     // Area 3
+	Texture maze_3(320, 203, SpriteSheet::maze_3, world_matrix_);     // Area 2
+	Texture maze_2(320, 100, SpriteSheet::maze_2, world_matrix_);     // Area 3
 	// Fence
 	//Texture fence(1161, 181, SpriteSheet::fence, world_matrix_);
 
@@ -931,10 +931,10 @@ void WorldBase::GENERATE_Events()
 	//Event_BorderIncident *border_incident = new Event_BorderIncident(10002, 1070, 206, 4, 4, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	//Event_RollCredits *roll_credits = new Event_RollCredits(10021, should_roll_credits_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 
-	//Event_TeleportPlayer *teleport_to_maze = new Event_TeleportPlayer(10001, 1107, 195, 18, 8, 296, 231, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_TeleportPlayer *teleport_to_mountain = new Event_TeleportPlayer(10004, 296, 250, 18, 8, 1107, 202, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_TeleportPlayer *teleport_to_sharktooth = new Event_TeleportPlayer(10005, 297, 174, 12, 4, 104, 241, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_TeleportPlayer *teleport_from_sharktooth = new Event_TeleportPlayer(10006, 104, 253, 12, 8, 297, 179, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	Event_TeleportPlayer *teleport_to_area2 = new Event_TeleportPlayer(10001, 294, 378, 9, 3, 240, 355, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	Event_TeleportPlayer *teleport_to_area3 = new Event_TeleportPlayer(10004, 125, 265, 9, 3, 128, 227, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	Event_TeleportPlayer *teleport_to_area3_hallway = new Event_TeleportPlayer(10005, 341, 225, 9, 3, 68, 179, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	Event_TeleportPlayer *teleport_to_final = new Event_TeleportPlayer(10006, 236, 110, 12, 8, 341, 175, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	//Event_TeleportPlayer *teleport_to_aki = new Event_TeleportPlayer(10007, 393, 21, 10, 8, 679, 87, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	//Event_TeleportPlayer *teleport_from_aki = new Event_TeleportPlayer(10008, 679, 103, 10, 8, 393, 33, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	//Event_SetupEnding *teleport_to_mini_bosses = new Event_SetupEnding(10009, 731, 59, 10, 8, 857, 65, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
@@ -962,12 +962,12 @@ void WorldBase::GENERATE_Events()
 
 	//// events_.push_back(test);
 	//events_.push_back(tutorial);
-	//events_.push_back(teleport_to_maze);
+	events_.push_back(teleport_to_area2);
 	//events_.push_back(border_incident);
 	//events_.push_back(lost_device);
-	//events_.push_back(teleport_to_mountain);
-	//events_.push_back(teleport_to_sharktooth);
-	//events_.push_back(teleport_from_sharktooth);
+	events_.push_back(teleport_to_area3);
+	events_.push_back(teleport_to_area3_hallway);
+	events_.push_back(teleport_to_final);
 	//events_.push_back(teleport_to_aki);
 	//events_.push_back(teleport_from_aki);
 	//events_.push_back(move_doorguard_sharktooth);
