@@ -29,18 +29,18 @@ void StartScreen::setBackgroundText()
 	drawRectangle(width_ - 17, height_ - 2, 12, 1, '=', 'P', startscreen_matrix_);
 
 	Image title_letters(
-		"[]        [] []====| []   []        []     [][][] []====| []====|Z[]   []   [] []      []]  []        []       []   []    | []     Z[]  [][]  [] []====  [][] []        []       []   []==|   []==== Z [][]  [][]  []      [] [][]        []       []   []      []     Z  []    []   []====| []  [[]        [][][] [][][] []      []====|Z",
-		"PM        PM PPPPPPM PM   PM        PM     PPPPPM PPPPPPM PPPPPPMZPM   PM   PM PM      PPM  PM        PM       PM   PM    M PM     ZPM  PPPM  PM PMMMMMM PPPM PM        PM       PM   PMMMM   PMMMMM Z PMPM  PMPM  PM      PM PMPM        PM       PM   PM      PM     Z  PM    PM   PPPPPPM PM  PPM        PPPPPM PPPPPM PM      PPPPPPMZ");
+		"  []     [] []====[] []    [] []====[]     []====[]    []====[]  Z  []   [][] []    [] []    [] []           []    []    []    []  Z  []  [] [] []    [] [=====[] []           []    []    []====[]  Z  [][]   [] []    []       [] []           []=[]=[]    []=[]__   Z  []     [] []====[]       [] []====[]        []====[] []    []  Z",
+		"  WW     WW WWWWWWWW WW    WW WWWWWWWW     WWWWWWWW    WWWWWWWW  Z  WW   WWWW WW    WW WW    WW WW           WW    WW    WW    WW  Z  WW  WW WW WW    WW WWWWWWWW WW           WW    WW    WWWWWWWW  Z  WWWW   WW WW    WW       WW WW           WWWWWWWW    WWWWWWW   Z  WW     WW WWWWWWWW       WW WWWWWWWW        WWWWWWWW WW    WW  Z");
 	Image press_enter("Press ENTER to begin", "P");
 	Image sprite_1(
-		"   mmmm   Z  <[]MMm  Z   >MM/   Z  O3><EO  Z OY3E3EY  Z  %U  U%  Z",
-		"   YYYY   Z  WAAYYY  Z   WYYJ   Z  JRWWRJ  Z JYRRRRY  Z  NY  YN  Z");
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z");
 	Image sprite_2(
-		"  #@@@@#  Z @@^\\/^@@ Z @ \\vv/ @ Z oxHxxHxo Z 0/####\\0 Z  %U  U%  Z",
-		"  DDDDDD Z DDRJJRDD Z D JWWJ D Z JSSJJSSJ Z JTTTTTTJ Z  MD  DM  Z");
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z");
 	Image sprite_3(
-		"  /####\\  Z /##\\\"\\>  Z ## \\*<   Z goX><go  Z  #0XXH#0 Z  %U  U%  Z",
-		"  JOOOOJO Z JOOJLJJ  Z OO JRJ   Z OJFJJOJ  Z  OJFFHOJ Z  HB  BH  Z");
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z");
 	
 	addImageToMatrix(28, 18, sprite_1, startscreen_matrix_);
 	addImageToMatrix(39, 18, sprite_2, startscreen_matrix_);
