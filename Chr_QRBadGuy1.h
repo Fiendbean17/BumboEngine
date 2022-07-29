@@ -24,12 +24,12 @@ public:
 		// Advanced ASCII (Highly detailed) and read from a file as a screenshot/image
 		BossFightDefinition boss_fight_definition = BossFightDefinition(
 			7,
-			"SHARKTOOTH",
+			"QRCode Guy",
 			"Jimi_Hendrix_-_All_Along_the_Watchtower.mp3",
-			144,
-			141,
-			142,
-			143
+			666,
+			666,
+			666,
+			666
 		),//*/
 
 		/* Use Event at end of battle (Whether slay or spare is called) | Must match ID of an actual event in the events folder */
@@ -41,27 +41,11 @@ public:
 
 		// (In-Battle) Dialog:		( player dialog choice; boss's response; should progress dialog? )
 		std::vector<std::tuple<std::string, std::string, bool>> dialog_choice_1;
-		dialog_choice_1.push_back(std::make_tuple("Where be me package!?", "WE'D BE HERE FOR MONTHS IF I HAD TO LIST EVERY PACKAGE I SMUGGLED", true));
-		dialog_choice_1.push_back(std::make_tuple("Be this EZ mode?", "I HATE OVERWATCH REFERENCES- IF ANYTHING, D.VA's THE WORST! ! !", false));
-		dialog_choice_1.push_back(std::make_tuple("I shall prove that ye be weak! ", "YOU DON'T SCARE ME, HERO!", false));
-
-		std::vector<std::tuple<std::string, std::string, bool>> dialog_choice_2;
-		dialog_choice_2.push_back(std::make_tuple("By 'smuggled', ye mean stolen, right?", "WELL I DON'T RECKON IT BE LEGAL!", false));
-		dialog_choice_2.push_back(std::make_tuple("Did ye pickpocket me?", "pickpocket... do ye take me fer some PETTY THIEF?", true));
-
-		std::vector<std::tuple<std::string, std::string, bool>> dialog_choice_3;
-		dialog_choice_3.push_back(std::make_tuple("Oh... well I guess ye're innocent...", "AND!? I'M STILL GOING TO KILL YOU!", true));
-
-		std::vector<std::tuple<std::string, std::string, bool>> dialog_choice_4;
-		dialog_choice_4.push_back(std::make_tuple("Wait, ye don't wanna do this!", "OH BUT I DO", false));
-		dialog_choice_4.push_back(std::make_tuple("Then I shall end ye!", "GOOD LUCK", false));
-		dialog_choice_4.push_back(std::make_tuple("'ave any interest in booty?", "GO HEAD, KEEP WASTING YOUR TIME CHATTING WITH THE INEVITABLE!", false));
-		dialog_choice_4.push_back(std::make_tuple("See if I care...", "THATS THE KIND OF NON-CARING ATTITUDE I LIKE TO SEE!!", true));
+		dialog_choice_1.push_back(std::make_tuple("Wait! I'll scan you!", "COMMAND NOT RECOGNIZED", false));
+		dialog_choice_1.push_back(std::make_tuple("Is that the best you got?", "COMMAND NOT RECOGNIZED", false));
+		dialog_choice_1.push_back(std::make_tuple("I can't scan your QR code it's not working", "COMMAND NOT RECOGNIZED", false));
 
 		dialog_choices_.push_back(dialog_choice_1);
-		dialog_choices_.push_back(dialog_choice_2);
-		dialog_choices_.push_back(dialog_choice_3);
-		dialog_choices_.push_back(dialog_choice_4);
 
 		/* Just a little check to make sure you typed the above code correctly.
 		* This will throw an exception if you added more than more dialog choices
@@ -102,78 +86,19 @@ public:
 		*/
 
 		// CREATE DIALOG NODES
-		DialogNode* node_1 = new DialogNode("", "AAAARRRGGGHGH! WHOOOO STEPSON ME TERRITORY?");
-		DialogNode* node_1_1 = new DialogNode("Whats yer name?", "MEEEEE NAME BE S-H-A-R-K T-O-O-T-H.");
-		DialogNode* node_1_1_1 = new DialogNode("O' th' Blood Sea??", "ARRRGGGG! IT IS I, SHARKTOOTH! THE NAME WHICH CASTS FEAR IN MANY A MAN.");
-		DialogNode* node_1_1_1_1 = new DialogNode("Were ye at th' border?", "SO WHAT IF I WAS??"); // 1=
-		DialogNode* node_1_1_1_2 = new DialogNode("Goodbye", "LEAVE ME TERRITORY!");
-		DialogNode* node_1_1_2 = new DialogNode("Were ye at th' border?", "SO WHAT IF I WAS??"); // =1
-		DialogNode* node_1_1_2_1 = new DialogNode("Did ye lose anythin'?", "I BE MISSIN' ME PRECIOUS CIGAR BOX."); // 2= (Options)
-		DialogNode* node_1_1_2_2 = new DialogNode("Be THIS yer cigar box?", "TIS MINE ITS TRUE...AND HOW... PRAYTELL... DID. YOU. GET. THIS.?");
-		DialogNode* node_1_1_2_2_1 = new DialogNode("I found it", "WELL I THANK YE FOR THAT.");
-		DialogNode* node_1_1_2_2_1_1 = new DialogNode("Regardin' th' border...", "WHAT ABOUT IT? SPIT IT OUT LAD! I HAVEN'T ALL DAY!");
-		DialogNode* node_1_1_2_2_1_1_1 = new DialogNode("See anyone suspicious?", "E'RYONE IS SUSPICIOUS IN MY EYES  ...EVEN YA.", "FIGHT");
-		DialogNode* node_1_1_2_2_1_1_2 = new DialogNode("Thars this package-", "CUT YE OFF RIGHT 'ERE. YE THINK IT WAS ME WHO STOLE IT! DON'T KNOW NOTHING ABOUT THAT ... HEH.");
-		DialogNode* node_1_1_2_2_1_1_2_1 = new DialogNode("Ye did pilfer it!", "SHUT YER TRAP! I'M SICK OF YOU!", "FIGHT");
-		DialogNode* node_1_1_2_2_1_1_2_2 = new DialogNode("I 'ave a suspicion...", "JUST A SUSPICION?! YE HAVEN'T THE COURAGE NOR THE BRAVERY TO FACE ME! TIME TO DIE, COWARD.");
-		DialogNode* node_1_1_2_2_1_1_2_2_1 = new DialogNode("I be no yellow-bellied cur!", "FINALLY SOME APTITUDE! DIE WIT' A SWORD IN YE HAND!", "FIGHT");
-		DialogNode* node_1_1_2_2_1_1_2_2_2 = new DialogNode("No, I dont wants t' fight", "WHEN WILL YE LEARN!? NO MATTER THE CHOICE YE MAKE, THIS WILL ALWAYS END THE SAME WAY!", "FIGHT");
-		DialogNode* node_1_1_2_2_1_1_2_3 = new DialogNode("No, nah at all!", "YA CALLING ME A SEA BARNACLE?", "FIGHT");
-		DialogNode* node_1_1_2_2_1_2 = new DialogNode("Take anythin' recently?", "ARE YE ACCUSING ME OF SOMETHING?! IF THAT BE THE CASE I'LL SEE YE 'N HELL.", "FIGHT");
-		DialogNode* node_1_1_2_2_2 = new DialogNode("I plundered it", "THEN BY BALGRUFF'S BEARD I WILL END YOU!", "FIGHT");
-		DialogNode* node_1_1_3 = new DialogNode("Ne'er heard o' ye...", "PERHAPS I'LL GIVE YE SOMETHING TO REMEMBER ME BY!", "FIGHT");
-		DialogNode* node_1_2 = new DialogNode("Ye cant claim territory", "DOOOOOOOOON'T TELL ME WHAT TO DO !!!!!", "FIGHT");
-		DialogNode* node_1_3 = new DialogNode("Goodbye...", "LEAVE ME TERRITORY!");
-		DialogNode* node_2 = new DialogNode("", "PERHAPS I WAS WRONG ABOUT YE", "SAVE"); // =FIGHT
-		DialogNode* node_2_1 = new DialogNode("Well-", "SHUT UP 'n GET LOST afore th' feds find me.");
-		DialogNode* node_2_1_1 = new DialogNode("perhaps ye could hel-", "NOT INTERESTED.");
-		DialogNode* node_2_1_2_1 = new DialogNode("Bye", "JUST GET LOST ALREADY!", "SAVE");
-		DialogNode* node_2_1_2 = new DialogNode("Bye", "GET LOST!", "SAVE");
+		DialogNode* node_1 = new DialogNode("", "SCAN MY QR CODE!");
+		DialogNode* node_1_1 = new DialogNode("Sure", "SCAN FAILURE. PLEASE TRY AGAIN!");
+		DialogNode* node_1_2 = new DialogNode("No", "ALL NO4C ATTENDEES MUST SCAN QR CODES!");
+		DialogNode* node_1_2_1 = new DialogNode("Fine", "SCAN FAILURE. PLEASE TRY AGAIN!");
+		DialogNode* node_1_2_2 = new DialogNode("No", "AUTHORIZING THE USE OF L55555%%% FORCE", "FIGHT");
+		DialogNode* node_1_3 = new DialogNode("Maybe later?", "Command Not Recognized. Try speaking up.");
 
 		// Link Dialog Nodes
 		node_1->setChoice1(node_1_1);
 		node_1->setChoice2(node_1_2);
+		node_1_2->setChoice1(node_1_2_1);
+		node_1_2->setChoice2(node_1_2_2);
 		node_1->setChoice3(node_1_3);
-		node_1_1->setChoice1(node_1_1_1);
-		node_1_1->setChoice2(node_1_1_2);
-		node_1_1->setChoice3(node_1_1_3);
-		node_1_1_1->setChoice1(node_1_1_1_1);
-		node_1_1_1->setChoice2(node_1_1_1_2);
-
-		node_1_1_2->setChoice1(node_1_1_2_1);
-		node_1_1_2->setChoice2(node_1_1_2_2);
-		node_1_1_2_2->setChoice1(node_1_1_2_2_1);
-		node_1_1_2_2->setChoice2(node_1_1_2_2_2);
-		node_1_1_2_2_1->setChoice1(node_1_1_2_2_1_1);
-		node_1_1_2_2_1->setChoice2(node_1_1_2_2_1_2);
-		node_1_1_2_2_1_1->setChoice1(node_1_1_2_2_1_1_1);
-		node_1_1_2_2_1_1->setChoice2(node_1_1_2_2_1_1_2);
-		node_1_1_2_2_1_1_2->setChoice1(node_1_1_2_2_1_1_2_1);
-		node_1_1_2_2_1_1_2->setChoice2(node_1_1_2_2_1_1_2_2);
-		node_1_1_2_2_1_1_2->setChoice3(node_1_1_2_2_1_1_2_3);
-
-		node_1_1_2_2_1_1_2_2->setChoice1(node_1_1_2_2_1_1_2_2_1);
-		node_1_1_2_2_1_1_2_2->setChoice2(node_1_1_2_2_1_1_2_2_2);
-
-		node_2->setChoice1(node_2_1);
-		node_2_1->setChoice1(node_2_1_1);
-		node_2_1->setChoice2(node_2_1_2);
-		node_2_1_1->setChoice1(node_2_1_2);
-
-		// Seperated Links:
-		node_1_1_1_1->setChoice1(node_1_1_2_1); // 1=
-		node_1_1_1_1->setChoice2(node_1_1_2_2);
-		node_1_1_2_1->setChoice1(node_1_1_2_2_1); // 2=
-		node_1_1_2_1->setChoice2(node_1_1_2_2_2);
-		node_1_1_2_2_1_1_1->setChoice1(node_2); // FIGHT
-		node_1_1_2_2_1_1_2_1->setChoice1(node_2);
-		node_1_1_2_2_1_1_2_2_1->setChoice1(node_2);
-		node_1_1_2_2_1_1_2_2_2->setChoice1(node_2);
-		node_1_1_2_2_1_1_2_3->setChoice1(node_2);
-		node_1_1_2_2_1_2->setChoice1(node_2);
-		node_1_1_2_2_2->setChoice1(node_2);
-		node_1_1_3->setChoice1(node_2);
-		node_1_2->setChoice1(node_2);
 
 		setHeadNode(node_1);
 	}

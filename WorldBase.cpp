@@ -341,7 +341,7 @@ void WorldBase::evaluatePlayerInput()
 		if (GetAsyncKeyState(0x54) & 0x8000) // Teleport Player			Press T Area 2
 			teleportPlayer(235, 332);
 		else if (GetAsyncKeyState(0x4D) & 0x8000) // Teleport Player    Press M (Teleport to Area 3)
-			teleportPlayer(276, 239);
+			teleportPlayer(260, 239);
 		else if (GetAsyncKeyState(0x46) & 0x8000) // Teleport Player    Press F (Teleport to start)
 			teleportPlayer(103, 387);
 		else if (GetAsyncKeyState(0x50) & 0x8000) // Add Placeholder to Map    Press P (Place Placeholder)
@@ -635,7 +635,7 @@ void WorldBase::GENERATE_NonHostileNPCs()
 // creates all the sign posts (These show popups)
 void WorldBase::GENERATE_Signposts()
 {
-	Signpost *welcome_sign = new Signpost(97, 372, 23, 9, 1, "NO4C 2 7_  Tomorrow B gins Tod*y", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
+	Signpost *welcome_sign = new Signpost(97, 372, 23, 9, 1, "NO4C 2%7_  Tom%rrow Begins Tod*y", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
 	//Signpost *checkpoint_sign_2 = new Signpost(1000, 210, 23, 9, 2, "Nakinom Border Checkpoint", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
 	//Signpost *shift_run = new Signpost(923, 215, 23, 9, 6, "Hold SHIFT to run", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
 	//Signpost *deep_cave = new Signpost(318, 191, 23, 9, 3, "Welcome ye pirates to the DEEP cave", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
