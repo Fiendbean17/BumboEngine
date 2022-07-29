@@ -300,6 +300,9 @@
     <ClCompile Include="SpriteSheet.cpp">
       <Filter>Source Files\World</Filter>
     </ClCompile>
+    <ClCompile Include="Collectible.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinMainParameters.h">
@@ -642,6 +645,9 @@
       <Filter>Header Files\Battle\Multi-Attack Patterns</Filter>
     </ClInclude>
     <ClInclude Include="ScoreDisplay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Collectible.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
