@@ -617,11 +617,11 @@ void WorldBase::GENERATE_Enemies()
 void WorldBase::GENERATE_NonHostileNPCs()
 {
 	CharacterBase *qrguy1 = new Chr_BackgroundNPC(259, 378, 2, player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_,
-		PopupDefinition("SCAN MY QR CODE TO INCREASE YOUR POINT COUNT!", 'X', 23, 9), SpriteSheet::qrcode, 'd');
+		PopupDefinition("SCAN MY QR CODE TO INCREASE YOUR POINT COUNT!", 'X', 23, 9), SpriteSheet::qrcode1, 'd');
 	CharacterBase* qrguy2 = new Chr_BackgroundNPC(259, 378, 2, player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_,
-		PopupDefinition("SCA- SCA- SCAN MU- MY Q-QR CODE TO INCREASE YOUR POINT COUNT! COUNT C%%%! NNTKLLA%LHMNS", 'X', 24, 9), SpriteSheet::qrcode, 'r');
+		PopupDefinition("SCA- SCA- SCAN MU- MY Q-QR CODE TO INCREASE YOUR POINT COUNT! COUNT C%%%! NNTKLLA%LHMNS", 'X', 24, 9), SpriteSheet::qrcode1, 'r');
 	CharacterBase* qrguy3 = new Chr_BackgroundNPC(247, 270, 2, player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_,
-		PopupDefinition("YOU CAN USE THE NOOO%%%%CCCC APP TO SCAN QR CODES. SCAN ME! INCREASE YOUR POINT COUNT NOW!", 'X', 25, 9), SpriteSheet::qrcode, 'r');
+		PopupDefinition("YOU CAN USE THE NOOO%%%%CCCC APP TO SCAN QR CODES. SCAN ME! INCREASE YOUR POINT COUNT NOW!", 'X', 25, 9), SpriteSheet::qrcode1, 'r');
 
 	qrguy1->initializeCharacter();
 	qrguy2->initializeCharacter();
