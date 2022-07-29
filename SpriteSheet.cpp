@@ -972,7 +972,63 @@ namespace SpriteSheet
 		"   KKKK   Z  JJYJKJ  Z   JJJK   Z  JRJJRJ  Z JRRWWRRW Z  SH  HS  Z"
 	);
 
-	WorldSpriteContainer qrcode = WorldSpriteContainer(
+	WorldSpriteContainer qrcode1 = WorldSpriteContainer(
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z"
+	);
+
+	WorldSpriteContainer qrcode2 = WorldSpriteContainer(
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z"
+	);
+
+	WorldSpriteContainer qrcode3 = WorldSpriteContainer(
 		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
 		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
 		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",

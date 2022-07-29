@@ -600,9 +600,9 @@ void WorldBase::GENERATE_Maze()
 void WorldBase::GENERATE_Enemies()
 {
 	// Main Characters
-	CharacterBase *qrbadguy1 = new Chr_QRBadGuy1(129, 386, 11, SpriteSheet::qrcode, 'd', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
-	CharacterBase *qrbadguy2 = new Chr_QRBadGuy2(235, 324, 16, SpriteSheet::qrcode, 'd', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
-	CharacterBase *qrbadguy3 = new Chr_QRBadGuy3(276, 239, 13, SpriteSheet::qrcode, 'l', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
+	CharacterBase *qrbadguy1 = new Chr_QRBadGuy1(129, 386, 11, SpriteSheet::qrcode1, 'd', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
+	CharacterBase *qrbadguy2 = new Chr_QRBadGuy2(235, 324, 16, SpriteSheet::qrcode2, 'd', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
+	CharacterBase *qrbadguy3 = new Chr_QRBadGuy3(276, 239, 13, SpriteSheet::qrcode3, 'l', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
 
 	qrbadguy1->initializeCharacter();
 	qrbadguy2->initializeCharacter();
