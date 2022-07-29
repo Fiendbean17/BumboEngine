@@ -379,17 +379,22 @@ void WorldBase::generateWorld()
 void WorldBase::checkRemovePickup()
 {
 	if (is_viewing_popup_ && getFacingEntity().first == 2)
-		for (Pickup *pickup : pickups_)
-			if (pickup->getUniqueObjectID() == getFacingEntity().second)
-				delete(pickup);
+		for (auto itr = pickups_.begin(); itr != pickups_.end(); ++itr) {
+			auto item = *itr;
+			if (item->getUniqueObjectID() == getFacingEntity().second) {
+				pickups_.erase(itr);
+				delete item;
+				break;
+			}
+		}
 }
 
 void WorldBase::checkRemoveCollectible()
 {
 	if(is_viewing_popup_ && getFacingEntity().first == 4)
 		for (auto itr = collectibles.begin(); itr != collectibles.end(); ++itr) {
+			auto item = *itr;
 			if ((*itr)->getUniqueObjectID() == getFacingEntity().second) {
-				auto item = *itr;
 				collectibles.erase(itr);
 				delete item;
 				break;
