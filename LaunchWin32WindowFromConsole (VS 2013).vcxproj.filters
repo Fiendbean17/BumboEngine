@@ -650,6 +650,15 @@
     <ClInclude Include="Collectible.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Chr_QRBadGuy1.h">
+      <Filter>Header Files\Characters\Main Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Chr_QRBadGuy2.h">
+      <Filter>Header Files\Characters\Main Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Chr_QRBadGuy3.h">
+      <Filter>Header Files\Characters\Main Characters</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LaunchWin32WindowFromConsole.rc">

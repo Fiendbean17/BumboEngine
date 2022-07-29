@@ -279,6 +279,9 @@
     <ClInclude Include="Chr_MiniBoss4.h" />
     <ClInclude Include="Chr_MinorNPC.h" />
     <ClInclude Include="Chr_PacingPirate.h" />
+    <ClInclude Include="Chr_QRBadGuy1.h" />
+    <ClInclude Include="Chr_QRBadGuy2.h" />
+    <ClInclude Include="Chr_QRBadGuy3.h" />
     <ClInclude Include="Chr_Ryuuko.h" />
     <ClInclude Include="Chr_Sharktooth.h" />
     <ClInclude Include="Chr_SleepingPirate.h" />

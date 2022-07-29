@@ -14,6 +14,11 @@
 #include "Chr_AkiFinal.h"
 #include "Chr_ThotPatrol.h"
 
+// QR CODE
+#include "Chr_QRBadGuy1.h"
+#include "Chr_QRBadGuy2.h"
+#include "Chr_QRBadGuy3.h"
+
 // Cannon Fodder
 #include "Chr_TutorialNPC.h"
 #include "Chr_MiniBoss1.h"

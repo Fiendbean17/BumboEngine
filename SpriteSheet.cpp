@@ -972,6 +972,34 @@ namespace SpriteSheet
 		"   KKKK   Z  JJYJKJ  Z   JJJK   Z  JRJJRJ  Z JRRWWRRW Z  SH  HS  Z"
 	);
 
+	WorldSpriteContainer qrcode = WorldSpriteContainer(
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   | XXXX |  Z  #| XXXX |# Z O | XXXX | OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |  XXXX|  Z   |# XXXX|# Z   | OXXXX| OZ   --------  Z    /    L   Z",
+		"    ______   Z   |      |  Z   |XXXX  |  Z  #|XXXX #|  Z O |XXXXO |  Z   --------  Z    /    L   Z",
+
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W WWWW W  Z  WW WWWW WW Z W W WWWW W WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   W  WWWWW  Z   WW WWWWWW Z   W WWWWWW WZ   WWWWWWWW  Z    W    W   Z",
+		"    WWWWWW   Z   W      W  Z   WWWWW  W  Z  WWWWWW WW  Z W WWWWWW W  Z   WWWWWWWW  Z    W    W   Z"
+	);
+
 	WorldSpriteContainer sharktooth = WorldSpriteContainer(
 		"  /\\/\\/\\  Z\\=/=\\/=\\=/Z  X@&&@X  Z   XXXX   Z o0O==O0o ZO <H==H>O Z  /U  U\\  Z",
 		"  /\\/\\/\\  Z\\=/=\\/=\\=/Z  xM\\/Mx  Z   WWWW   Z o0O==O0o ZO <H==H>O Z  /U  U\\  Z",
@@ -1746,6 +1774,18 @@ namespace SpriteSheet
 	(
 		"   @@&@   Z #@@* #@( Z #*%  (*& Z @(%#*,#@ Z",
 		"   SSSS   Z SSSS SSS Z SSS  SSS Z SSSSSSSS Z"
+	);
+	
+	ColoredString broken_qr1 = ColoredString
+	(
+		"    _____    Z   |    |_   Z   | XXX  |  Z  #| X XX |# Z  O| XX X |O Z   ---___|   Z",
+		"    WWWWW    Z   W    WW   Z   W WWW  W  Z  WW W WW WW Z  WW WW W WW Z   WWWWWWW   Z"
+	);
+	
+	ColoredString broken_qr2 = ColoredString
+	(
+		"   |x_       Z   | X|___   Z  #| X    |# Z  O|  XXX |  Z    |_____|   Z",
+		"   WWW       Z   W WWWWW   Z  WW W    WW Z  WW  WWW W  Z    WWWWWWW   Z"
 	);
 
 	ColoredString rock_2 = ColoredString
