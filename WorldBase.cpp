@@ -2,7 +2,7 @@
 
 WorldBase::WorldBase(int screen_width, int screen_height, int world_width, int world_height, int starting_position_x, int starting_position_y, PlayerDefinition &player, Matrix &screen_matrix, Inventory &inventory, BitmapDefinition &bitmap, AudioDefinition &audio, std::string directory)
 	: screen_width_{ screen_width }, screen_height_{ screen_height }, world_width_{ world_width }, world_height_{ world_height }, start_time_player_speed_(0), element_has_object_(world_height, std::vector<std::pair<int, int>>(world_width, std::make_pair<int, int>(0, 0))),
-	world_matrix_(world_width, world_height), screen_matrix_{ screen_matrix }, player_{ player }, player_sprite_{ 12, 10, screen_matrix }, player_speed_modifier_(30), inventory_{ inventory }, DEBUG_has_initialized_{ false }, audio_{ audio },
+	world_matrix_(world_width, world_height), screen_matrix_{ screen_matrix }, player_{ player }, player_sprite_{ 12, 10, screen_matrix }, player_speed_modifier_(30), inventory_{ inventory }, score_display(16, screen_matrix), DEBUG_has_initialized_{ false }, audio_{ audio },
 	DEBUG_showing_collisions_{ false }, opposite_player_direction_('d'), should_enter_battle_{ false }, is_event_active_{ false }, bitmap_{ bitmap }, enter_key_pressed_{ false }, should_roll_credits_{ false }
 {
 	screen_position_.x = starting_position_x - screen_width / 2;
@@ -180,6 +180,7 @@ void WorldBase::displayScreen()
 	}
 
 	player_sprite_.displaySprite(screen_width_, screen_height_);
+	score_display.displaySprite(0, 0);
 	if (selected_character_ != nullptr && selected_character_->shouldShowDialog())
 		selected_character_->displayDialogMenu();
 
