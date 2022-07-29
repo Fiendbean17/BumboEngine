@@ -869,19 +869,19 @@ void WorldBase::GENERATE_NonHostileNPCs()
 // creates all the sign posts (These show popups)
 void WorldBase::GENERATE_Signposts()
 {
-	Signpost *checkpoint_sign_1 = new Signpost(750, 224, 23, 9, 1, "Nakinom Border Checkpoint --------> 0.2 km", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
-	Signpost *checkpoint_sign_2 = new Signpost(1000, 210, 23, 9, 2, "Nakinom Border Checkpoint", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
-	Signpost *shift_run = new Signpost(923, 215, 23, 9, 6, "Hold SHIFT to run", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
-	Signpost *deep_cave = new Signpost(318, 191, 23, 9, 3, "Welcome ye pirates to the DEEP cave", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
-	Signpost *clear_cave = new Signpost(85, 88, 23, 9, 4, "Welcome to the CLEAR cave", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
-	Signpost *no_entry = new Signpost(377, 47, 23, 9, 5, "Stop! No Entry beyond this point!", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
+	//Signpost *checkpoint_sign_1 = new Signpost(750, 224, 23, 9, 1, "Nakinom Border Checkpoint --------> 0.2 km", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
+	//Signpost *checkpoint_sign_2 = new Signpost(1000, 210, 23, 9, 2, "Nakinom Border Checkpoint", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
+	//Signpost *shift_run = new Signpost(923, 215, 23, 9, 6, "Hold SHIFT to run", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
+	//Signpost *deep_cave = new Signpost(318, 191, 23, 9, 3, "Welcome ye pirates to the DEEP cave", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
+	//Signpost *clear_cave = new Signpost(85, 88, 23, 9, 4, "Welcome to the CLEAR cave", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
+	//Signpost *no_entry = new Signpost(377, 47, 23, 9, 5, "Stop! No Entry beyond this point!", world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_);
 
-	signposts_.push_back(checkpoint_sign_1);
-	signposts_.push_back(checkpoint_sign_2);
-	signposts_.push_back(shift_run);
-	signposts_.push_back(deep_cave);
-	signposts_.push_back(clear_cave);
-	signposts_.push_back(no_entry);
+	//signposts_.push_back(checkpoint_sign_1);
+	//signposts_.push_back(checkpoint_sign_2);
+	//signposts_.push_back(shift_run);
+	//signposts_.push_back(deep_cave);
+	//signposts_.push_back(clear_cave);
+	//signposts_.push_back(no_entry);
 
 	// Displays all sign posts
 	for (auto signpost : signposts_)
@@ -928,68 +928,68 @@ void WorldBase::GENERATE_Events()
 	/* Event_Test *test = new Event_Test(9999, 150, 649, 10, 10, element_has_object_, screen_matrix_, characters_, nullptr);
 	 * Excluding the test event, Event Unique Object ID's should BEGIN at 10029
 	 * Events with ID's 1 - 9998 are reserved for characters that start battles */
-	Event_Tutorial *tutorial = new Event_Tutorial(10000, 790, 232, 10, 11, 1, audio_.getDirectory(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_BorderIncident *border_incident = new Event_BorderIncident(10002, 1070, 206, 4, 4, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_RollCredits *roll_credits = new Event_RollCredits(10021, should_roll_credits_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_Tutorial *tutorial = new Event_Tutorial(10000, 790, 232, 10, 11, 1, audio_.getDirectory(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_BorderIncident *border_incident = new Event_BorderIncident(10002, 1070, 206, 4, 4, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_RollCredits *roll_credits = new Event_RollCredits(10021, should_roll_credits_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 
-	Event_TeleportPlayer *teleport_to_maze = new Event_TeleportPlayer(10001, 1107, 195, 18, 8, 296, 231, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportPlayer *teleport_to_mountain = new Event_TeleportPlayer(10004, 296, 250, 18, 8, 1107, 202, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportPlayer *teleport_to_sharktooth = new Event_TeleportPlayer(10005, 297, 174, 12, 4, 104, 241, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportPlayer *teleport_from_sharktooth = new Event_TeleportPlayer(10006, 104, 253, 12, 8, 297, 179, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportPlayer *teleport_to_aki = new Event_TeleportPlayer(10007, 393, 21, 10, 8, 679, 87, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportPlayer *teleport_from_aki = new Event_TeleportPlayer(10008, 679, 103, 10, 8, 393, 33, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_SetupEnding *teleport_to_mini_bosses = new Event_SetupEnding(10009, 731, 59, 10, 8, 857, 65, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_MoveNPCIfDefeated *move_doorguard_sharktooth = new Event_MoveNPCIfDefeated(10017, 538, 167, 2, 24, 198, 165, 38, 13, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_MoveNPCIfDefeated *move_doorguard_ryuuko = new Event_MoveNPCIfDefeated(10018, 104, 234, 14, 2, 198, 165, 16, 14, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_MoveNPCIfDefeated *move_aki = new Event_MoveNPCIfDefeated(10019, 105, 228, 14, 2, 296, 195, 22, 14, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_MoveNPCIfDefeated *move_bad_ending_guy = new Event_MoveNPCIfDefeated(10025, 872, 67, 3, 3, 924, 72, 50, 12, false, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_MoveNPC *mov_mini_boss_1 = new Event_MoveNPC(10023, 198, 165, 10, 10, 1007, 'x', 20, 'd', 20, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_, 198, 165);
-	Event_MoveNPC *mov_mini_boss_2 = new Event_MoveNPC(10024, 198, 165, 10, 10, 54, 'y', 30, 'd', 21, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_TeleportNPC *teleport_doorguard_sharktooth = new Event_TeleportNPC(10026, 198, 165, 10, 10, 198, 165, 38, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_StopAudio *stopTutorialFall = new Event_StopAudio(10027, 886, 224, 6, 6, "falling", 0, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_StopAudio *stopThrowFall = new Event_StopAudio(10028, 497, 199, 6, 6, "falling", 0, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_TeleportPlayer *teleport_to_maze = new Event_TeleportPlayer(10001, 1107, 195, 18, 8, 296, 231, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_TeleportPlayer *teleport_to_mountain = new Event_TeleportPlayer(10004, 296, 250, 18, 8, 1107, 202, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_TeleportPlayer *teleport_to_sharktooth = new Event_TeleportPlayer(10005, 297, 174, 12, 4, 104, 241, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_TeleportPlayer *teleport_from_sharktooth = new Event_TeleportPlayer(10006, 104, 253, 12, 8, 297, 179, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_TeleportPlayer *teleport_to_aki = new Event_TeleportPlayer(10007, 393, 21, 10, 8, 679, 87, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_TeleportPlayer *teleport_from_aki = new Event_TeleportPlayer(10008, 679, 103, 10, 8, 393, 33, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_SetupEnding *teleport_to_mini_bosses = new Event_SetupEnding(10009, 731, 59, 10, 8, 857, 65, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_MoveNPCIfDefeated *move_doorguard_sharktooth = new Event_MoveNPCIfDefeated(10017, 538, 167, 2, 24, 198, 165, 38, 13, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_MoveNPCIfDefeated *move_doorguard_ryuuko = new Event_MoveNPCIfDefeated(10018, 104, 234, 14, 2, 198, 165, 16, 14, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_MoveNPCIfDefeated *move_aki = new Event_MoveNPCIfDefeated(10019, 105, 228, 14, 2, 296, 195, 22, 14, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_MoveNPCIfDefeated *move_bad_ending_guy = new Event_MoveNPCIfDefeated(10025, 872, 67, 3, 3, 924, 72, 50, 12, false, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_MoveNPC *mov_mini_boss_1 = new Event_MoveNPC(10023, 198, 165, 10, 10, 1007, 'x', 20, 'd', 20, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_, 198, 165);
+	//Event_MoveNPC *mov_mini_boss_2 = new Event_MoveNPC(10024, 198, 165, 10, 10, 54, 'y', 30, 'd', 21, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_TeleportNPC *teleport_doorguard_sharktooth = new Event_TeleportNPC(10026, 198, 165, 10, 10, 198, 165, 38, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_StopAudio *stopTutorialFall = new Event_StopAudio(10027, 886, 224, 6, 6, "falling", 0, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_StopAudio *stopThrowFall = new Event_StopAudio(10028, 497, 199, 6, 6, "falling", 0, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 
 
-	// Inside Cave
-	Event_LostDevice *lost_device = new Event_LostDevice(10003, 296, 224, 56, 1, player_.getPlayerName(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_AkiClearCave *aki_clear_cave = new Event_AkiClearCave(10010, 297, 179, 10, 11, player_.getPlayerName(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_BridgeRally *bridge_rally = new Event_BridgeRally(10011, 353, 113, 20, 1, 1, false, world_matrix_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_BridgeRally2 *bridge_rally2 = new Event_BridgeRally2(10012, 285, 90, 5, 5, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_BridgeRally3 *bridge_rally3 = new Event_BridgeRally3(10013, 215, 85, 5, 5, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_Cubans *cubans = new Event_Cubans(10014, 198, 165, 10, 10, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_ThotPatrol *thot_patrol = new Event_ThotPatrol(10022, 198, 165, 10, 11, player_.getPlayerName(), selected_character_, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_ThrowOffCliff *throw_off_cliff = new Event_ThrowOffCliff(10016, 496, 225, 20, 1, 1, audio_.getDirectory(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	Event_RemoveObject *remove_object = new Event_RemoveObject(10020, 198, 165, 10, 10, 697, 61, 7, 3, 1, false, world_matrix_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//// Inside Cave
+	//Event_LostDevice *lost_device = new Event_LostDevice(10003, 296, 224, 56, 1, player_.getPlayerName(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_AkiClearCave *aki_clear_cave = new Event_AkiClearCave(10010, 297, 179, 10, 11, player_.getPlayerName(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_BridgeRally *bridge_rally = new Event_BridgeRally(10011, 353, 113, 20, 1, 1, false, world_matrix_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_BridgeRally2 *bridge_rally2 = new Event_BridgeRally2(10012, 285, 90, 5, 5, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_BridgeRally3 *bridge_rally3 = new Event_BridgeRally3(10013, 215, 85, 5, 5, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_Cubans *cubans = new Event_Cubans(10014, 198, 165, 10, 10, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_ThotPatrol *thot_patrol = new Event_ThotPatrol(10022, 198, 165, 10, 11, player_.getPlayerName(), selected_character_, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_ThrowOffCliff *throw_off_cliff = new Event_ThrowOffCliff(10016, 496, 225, 20, 1, 1, audio_.getDirectory(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
+	//Event_RemoveObject *remove_object = new Event_RemoveObject(10020, 198, 165, 10, 10, 697, 61, 7, 3, 1, false, world_matrix_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 
-	// events_.push_back(test);
-	events_.push_back(tutorial);
-	events_.push_back(teleport_to_maze);
-	events_.push_back(border_incident);
-	events_.push_back(lost_device);
-	events_.push_back(teleport_to_mountain);
-	events_.push_back(teleport_to_sharktooth);
-	events_.push_back(teleport_from_sharktooth);
-	events_.push_back(teleport_to_aki);
-	events_.push_back(teleport_from_aki);
-	events_.push_back(move_doorguard_sharktooth);
-	events_.push_back(move_doorguard_ryuuko);
-	events_.push_back(move_aki);
-	events_.push_back(teleport_to_mini_bosses);
-	events_.push_back(aki_clear_cave);
-	events_.push_back(bridge_rally);
-	events_.push_back(bridge_rally2);
-	events_.push_back(bridge_rally3);
-	events_.push_back(cubans);
-	events_.push_back(thot_patrol);
-	events_.push_back(throw_off_cliff);
-	events_.push_back(remove_object);
-	events_.push_back(roll_credits);
-	events_.push_back(mov_mini_boss_1);
-	events_.push_back(mov_mini_boss_2);
-	events_.push_back(move_bad_ending_guy);
-	events_.push_back(teleport_doorguard_sharktooth);
-	events_.push_back(stopTutorialFall);
-	events_.push_back(stopThrowFall);
+	//// events_.push_back(test);
+	//events_.push_back(tutorial);
+	//events_.push_back(teleport_to_maze);
+	//events_.push_back(border_incident);
+	//events_.push_back(lost_device);
+	//events_.push_back(teleport_to_mountain);
+	//events_.push_back(teleport_to_sharktooth);
+	//events_.push_back(teleport_from_sharktooth);
+	//events_.push_back(teleport_to_aki);
+	//events_.push_back(teleport_from_aki);
+	//events_.push_back(move_doorguard_sharktooth);
+	//events_.push_back(move_doorguard_ryuuko);
+	//events_.push_back(move_aki);
+	//events_.push_back(teleport_to_mini_bosses);
+	//events_.push_back(aki_clear_cave);
+	//events_.push_back(bridge_rally);
+	//events_.push_back(bridge_rally2);
+	//events_.push_back(bridge_rally3);
+	//events_.push_back(cubans);
+	//events_.push_back(thot_patrol);
+	//events_.push_back(throw_off_cliff);
+	//events_.push_back(remove_object);
+	//events_.push_back(roll_credits);
+	//events_.push_back(mov_mini_boss_1);
+	//events_.push_back(mov_mini_boss_2);
+	//events_.push_back(move_bad_ending_guy);
+	//events_.push_back(teleport_doorguard_sharktooth);
+	//events_.push_back(stopTutorialFall);
+	//events_.push_back(stopThrowFall);
 
 	// Set all event colliders / tiggers
 	for (auto event : events_)
