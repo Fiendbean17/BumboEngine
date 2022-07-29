@@ -916,6 +916,16 @@ void WorldBase::GENERATE_Pickups()
 		pickup->createWorldSprite();
 }
 
+void WorldBase::GENERATE_Collectibles()
+{
+	Image* COLLECTIBLE = new Image("/\\Z\\/");
+	Collectible* col1 = new Collectible(750, 250, 23, 9, 31, world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_, score_display, *COLLECTIBLE, 50);
+	collectibles.push_back(col1);
+	for (auto c : collectibles) {
+		c->createWorldSprite();
+	}
+}
+
 // creates things that don't fit into any other category
 void WorldBase::GENERATE_AdditionalObjects()
 {
