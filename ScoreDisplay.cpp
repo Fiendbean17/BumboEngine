@@ -22,3 +22,8 @@ void ScoreDisplay::setScore(unsigned long score)
 {
 	this->score = score;
 }
+
+void ScoreDisplay::addScore(unsigned int score)
+{
+	this->score += score;
+}

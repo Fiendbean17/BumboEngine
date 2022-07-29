@@ -183,6 +183,7 @@
     <ClCompile Include="BattleBase.cpp" />
     <ClCompile Include="CharacterBase.cpp" />
     <ClCompile Include="BattleDialogBase.cpp" />
+    <ClCompile Include="Collectible.cpp" />
     <ClCompile Include="Credits.cpp" />
     <ClCompile Include="DialogManager.cpp" />
     <ClCompile Include="EventBase.cpp" />
@@ -285,6 +286,7 @@
     <ClInclude Include="Chr_TutorialNPC.h" />
     <ClInclude Include="Chr_MajorNPC.h" />
     <ClInclude Include="BattleDialogBase.h" />
+    <ClInclude Include="Collectible.h" />
     <ClInclude Include="ColoredString.h" />
     <ClInclude Include="ColorPalette.h" />
     <ClInclude Include="Credits.h" />
