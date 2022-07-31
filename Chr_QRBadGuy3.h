@@ -8,7 +8,7 @@
 class Chr_QRBadGuy3 : public CharacterBase
 {
 public:
-	Chr_QRBadGuy3(int center_position_x, int center_position_y, int unique_object_ID, WorldSpriteContainer world_sprite, char direction, PlayerDefinition& player, int screen_width, int screen_height, Matrix& world_matrix, std::vector<std::vector<std::pair<int, int>>>& element_has_object, Matrix& screen_matrix, BitmapDefinition& bitmap, AudioDefinition& audio,
+	Chr_QRBadGuy3(int center_position_x, int center_position_y, int unique_object_ID, WorldSpriteContainer world_sprite, char direction, BattleSprite battle_sprite, PlayerDefinition& player, int screen_width, int screen_height, Matrix& world_matrix, std::vector<std::vector<std::pair<int, int>>>& element_has_object, Matrix& screen_matrix, BitmapDefinition& bitmap, AudioDefinition& audio,
 		// START CONFIGURABLE VARIABLES HERE -------------------------------------------------
 
 
@@ -20,22 +20,19 @@ public:
 		// Basic Popup Dialog (Only used if use_basic_dialog == TRUE)
 		PopupDefinition popup_sprite = PopupDefinition("This is my only dialog! hello ", 'X', 23, 9),
 
-
-		// Advanced ASCII (Highly detailed) and read from a file as a screenshot/image
-		BossFightDefinition boss_fight_definition = BossFightDefinition(
-			13,
-			"QRCode Guy",
-			"Peter_Schilling_-_Major_Tom.mp3",
-			666,
-			666,
-			666,
-			666
-		),
-
 		/* Use Event at end of battle (Whether slay or spare is called) | Must match ID of an actual event in the events folder */
 		int event_ID = 10022) // 0 = no event
 
-		: CharacterBase(center_position_x, center_position_y, popup_sprite, unique_object_ID, world_matrix, element_has_object, screen_matrix, screen_width, screen_height, event_ID, player, boss_fight_definition, attack_on_sight, use_basic_dialog, bitmap, audio, world_sprite)
+		: CharacterBase(center_position_x, center_position_y, popup_sprite, unique_object_ID, world_matrix, element_has_object, screen_matrix, screen_width, screen_height, event_ID, player,
+			BossFightDefinition(
+				13, // boss health
+				40, // his smile/eyes (overlay) offset X position
+				20, // his smile/eyes (overlay) offset Y position
+				"QRCode Guy",
+				"major.mp3",
+				battle_sprite.getFace(),
+				battle_sprite.getOverlay()
+			), attack_on_sight, use_basic_dialog, bitmap, audio, world_sprite)
 	{
 		faceDirection(direction);
 

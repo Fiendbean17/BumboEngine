@@ -361,7 +361,6 @@ void WorldBase::teleportPlayer(int position_x, int position_y)
 // creates the world
 void WorldBase::generateWorld()
 {
-	GENERATE_Maze();
 	GENERATE_OutsideArea();
 	GENERATE_WorldBorder();
 	GENERATE_AdditionalObjects();
@@ -569,7 +568,7 @@ void WorldBase::GENERATE_OutsideArea()
 	Texture rock_2(265, 340, SpriteSheet::rock, world_matrix_);
 	Texture rock_3(84, 290, SpriteSheet::rock, world_matrix_);
 	Texture rock_4(151, 276, SpriteSheet::rock, world_matrix_);
-	Texture rock_5(56, 402, SpriteSheet::rock, world_matrix_);
+	Texture rock_5(56, 403, SpriteSheet::rock, world_matrix_);
 
 
 	Texture brokenqr1(131, 345, SpriteSheet::broken_qr1, world_matrix_);
@@ -577,32 +576,13 @@ void WorldBase::GENERATE_OutsideArea()
 	Texture brokenqr3(81, 283, SpriteSheet::broken_qr1, world_matrix_);
 }
 
-// Creates the walls of the maze as well as objects that should be placed INSIDE the maze
-void WorldBase::GENERATE_Maze()
-{
-	// Maze
-	//Texture maze_1(300, 137, SpriteSheet::maze_1, world_matrix_);
-
-	// Rocks
-	//Texture rock_1(457, 86, SpriteSheet::rock, world_matrix_);
-	//Texture rock_2(485, 96, SpriteSheet::rock, world_matrix_);
-	//Texture rock_3(495, 90, SpriteSheet::rock, world_matrix_);
-	//Texture rock_4(697, 61, SpriteSheet::rock_2, world_matrix_); // Rock Blocking Door
-	//Texture rock_5(152, 33, SpriteSheet::rock, world_matrix_);
-	//Texture rock_6(126, 52, SpriteSheet::rock, world_matrix_);
-	//Texture rock_7(178, 52, SpriteSheet::rock, world_matrix_);
-	//Texture rock_8(205, 49, SpriteSheet::rock, world_matrix_);
-	//Texture rock_9(277, 32, SpriteSheet::rock, world_matrix_);
-	//Texture rock_10(263, 36, SpriteSheet::rock, world_matrix_);
-}
-
 // creates NPCs that SHOULD attack (They don't have to at first, but if they attack at any time, put them here)
 void WorldBase::GENERATE_Enemies()
 {
 	// Main Characters
-	CharacterBase *qrbadguy1 = new Chr_QRBadGuy1(129, 386, 11, SpriteSheet::qrcode1, 'd', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
-	CharacterBase *qrbadguy2 = new Chr_QRBadGuy2(235, 324, 16, SpriteSheet::qrcode2, 'd', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
-	CharacterBase *qrbadguy3 = new Chr_QRBadGuy3(276, 239, 13, SpriteSheet::qrcode3, 'l', player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
+	CharacterBase *qrbadguy1 = new Chr_QRBadGuy1(129, 386, 11, SpriteSheet::qrcode1, 'd', SpriteSheet::face_qr, player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
+	CharacterBase *qrbadguy2 = new Chr_QRBadGuy2(235, 324, 16, SpriteSheet::qrcode2, 'd', SpriteSheet::face_qr, player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
+	CharacterBase *qrbadguy3 = new Chr_QRBadGuy3(276, 239, 13, SpriteSheet::qrcode3, 'l', SpriteSheet::face_qr, player_, screen_width_, screen_height_, world_matrix_, element_has_object_, screen_matrix_, bitmap_, audio_);
 
 	qrbadguy1->initializeCharacter();
 	qrbadguy2->initializeCharacter();
@@ -688,7 +668,7 @@ void WorldBase::GENERATE_Collectibles()
 #define IMG_COLLECTIBLE (new Image("/=\\Z|$|Z\\=/Z", "RRRZRYRZRRRZ"))
 #define COLLECTIBLE(x,y,uid,value) collectibles.push_back(new Collectible(x,y,23,9,uid,world_matrix_, element_has_object_, screen_matrix_, screen_width_, screen_height_, score_display, IMG_COLLECTIBLE, value))
 #define COL(x,y,value) COLLECTIBLE(x,y,(++collectibleUIDs),value)
-	COL(92, 380, 50);
+	COL(83, 383, 50);
 	COL(230, 380, 50);
 	COL(240, 280, 100);
 #undef COL
@@ -709,71 +689,15 @@ void WorldBase::GENERATE_AdditionalObjects()
 // creates events that trigger cutscenes, battles, enemy_movement, etc...
 void WorldBase::GENERATE_Events()
 {
-	/* Event_Test *test = new Event_Test(9999, 150, 649, 10, 10, element_has_object_, screen_matrix_, characters_, nullptr);
-	 * Excluding the test event, Event Unique Object ID's should BEGIN at 10029
-	 * Events with ID's 1 - 9998 are reserved for characters that start battles */
-	//Event_Tutorial *tutorial = new Event_Tutorial(10000, 790, 232, 10, 11, 1, audio_.getDirectory(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_BorderIncident *border_incident = new Event_BorderIncident(10002, 1070, 206, 4, 4, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_RollCredits *roll_credits = new Event_RollCredits(10021, should_roll_credits_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-
 	Event_TeleportPlayer *teleport_to_area2 = new Event_TeleportPlayer(10001, 294, 378, 13, 3, 240, 355, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	Event_TeleportPlayer *teleport_to_area3 = new Event_TeleportPlayer(10004, 125, 265, 13, 3, 128, 227, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	Event_TeleportPlayer *teleport_to_area3_hallway = new Event_TeleportPlayer(10005, 341, 225, 13, 3, 68, 179, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 	Event_TeleportPlayer *teleport_to_final = new Event_TeleportPlayer(10006, 236, 110, 13, 7, 341, 175, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_TeleportPlayer *teleport_to_aki = new Event_TeleportPlayer(10007, 393, 21, 10, 8, 679, 87, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_TeleportPlayer *teleport_from_aki = new Event_TeleportPlayer(10008, 679, 103, 10, 8, 393, 33, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_SetupEnding *teleport_to_mini_bosses = new Event_SetupEnding(10009, 731, 59, 10, 8, 857, 65, 1, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_MoveNPCIfDefeated *move_doorguard_sharktooth = new Event_MoveNPCIfDefeated(10017, 538, 167, 2, 24, 198, 165, 38, 13, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_MoveNPCIfDefeated *move_doorguard_ryuuko = new Event_MoveNPCIfDefeated(10018, 104, 234, 14, 2, 198, 165, 16, 14, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_MoveNPCIfDefeated *move_aki = new Event_MoveNPCIfDefeated(10019, 105, 228, 14, 2, 296, 195, 22, 14, true, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_MoveNPCIfDefeated *move_bad_ending_guy = new Event_MoveNPCIfDefeated(10025, 872, 67, 3, 3, 924, 72, 50, 12, false, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_MoveNPC *mov_mini_boss_1 = new Event_MoveNPC(10023, 198, 165, 10, 10, 1007, 'x', 20, 'd', 20, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_, 198, 165);
-	//Event_MoveNPC *mov_mini_boss_2 = new Event_MoveNPC(10024, 198, 165, 10, 10, 54, 'y', 30, 'd', 21, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_TeleportNPC *teleport_doorguard_sharktooth = new Event_TeleportNPC(10026, 198, 165, 10, 10, 198, 165, 38, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_StopAudio *stopTutorialFall = new Event_StopAudio(10027, 886, 224, 6, 6, "falling", 0, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_StopAudio *stopThrowFall = new Event_StopAudio(10028, 497, 199, 6, 6, "falling", 0, true, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
 
-
-	//// Inside Cave
-	//Event_LostDevice *lost_device = new Event_LostDevice(10003, 296, 224, 56, 1, player_.getPlayerName(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_AkiClearCave *aki_clear_cave = new Event_AkiClearCave(10010, 297, 179, 10, 11, player_.getPlayerName(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_BridgeRally *bridge_rally = new Event_BridgeRally(10011, 353, 113, 20, 1, 1, false, world_matrix_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_BridgeRally2 *bridge_rally2 = new Event_BridgeRally2(10012, 285, 90, 5, 5, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_BridgeRally3 *bridge_rally3 = new Event_BridgeRally3(10013, 215, 85, 5, 5, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_Cubans *cubans = new Event_Cubans(10014, 198, 165, 10, 10, 1, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_ThotPatrol *thot_patrol = new Event_ThotPatrol(10022, 198, 165, 10, 11, player_.getPlayerName(), selected_character_, false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_ThrowOffCliff *throw_off_cliff = new Event_ThrowOffCliff(10016, 496, 225, 20, 1, 1, audio_.getDirectory(), false, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-	//Event_RemoveObject *remove_object = new Event_RemoveObject(10020, 198, 165, 10, 10, 697, 61, 7, 3, 1, false, world_matrix_, element_has_object_, screen_matrix_, characters_, screen_position_, screen_width_, screen_height_);
-
-	//// events_.push_back(test);
-	//events_.push_back(tutorial);
 	events_.push_back(teleport_to_area2);
-	//events_.push_back(border_incident);
-	//events_.push_back(lost_device);
 	events_.push_back(teleport_to_area3);
 	events_.push_back(teleport_to_area3_hallway);
 	events_.push_back(teleport_to_final);
-	//events_.push_back(teleport_to_aki);
-	//events_.push_back(teleport_from_aki);
-	//events_.push_back(move_doorguard_sharktooth);
-	//events_.push_back(move_doorguard_ryuuko);
-	//events_.push_back(move_aki);
-	//events_.push_back(teleport_to_mini_bosses);
-	//events_.push_back(aki_clear_cave);
-	//events_.push_back(bridge_rally);
-	//events_.push_back(bridge_rally2);
-	//events_.push_back(bridge_rally3);
-	//events_.push_back(cubans);
-	//events_.push_back(thot_patrol);
-	//events_.push_back(throw_off_cliff);
-	//events_.push_back(remove_object);
-	//events_.push_back(roll_credits);
-	//events_.push_back(mov_mini_boss_1);
-	//events_.push_back(mov_mini_boss_2);
-	//events_.push_back(move_bad_ending_guy);
-	//events_.push_back(teleport_doorguard_sharktooth);
-	//events_.push_back(stopTutorialFall);
-	//events_.push_back(stopThrowFall);
 
 	// Set all event colliders / tiggers
 	for (auto event : events_)

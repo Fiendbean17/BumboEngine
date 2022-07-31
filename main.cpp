@@ -352,23 +352,10 @@ HBITMAP ReplaceAllColorsExcept(HBITMAP hBmp, COLORREF cExcludedColor, COLORREF c
 void createDirectory(HINSTANCE hInstance, TCHAR directory[MAX_PATH]) {
 
 	// Names don't actually matter.. could be "Hello.mp3" just there for readability
-	createMP3File(hInstance, directory, L"Bee_Gees_-_Stayin_Alive.mp3", 146);
-	createMP3File(hInstance, directory, L"Earth_Wind_and_Fire_-_September.mp3", 148);
-	createMP3File(hInstance, directory, L"Guns_n_Roses_-_Nightrain.mp3", 149);
-	createMP3File(hInstance, directory, L"Initial D - Deja Vu.mp3", 150);
-	createMP3File(hInstance, directory, L"James_Brown_-_Sex_Machine.mp3", 151);
-	createMP3File(hInstance, directory, L"Jimi_Hendrix_-_All_Along_the_Watchtower.mp3", 152);
-	createMP3File(hInstance, directory, L"Led_Zeppelin_-_Achilles_Last_Stand.mp3", 153);
-	createMP3File(hInstance, directory, L"Led_Zeppelin_-_Immigrant_Song.mp3", 154);
-	createMP3File(hInstance, directory, L"Men_At_Work_-_Who_Can_It_Be_Now.mp3", 155);
-	createMP3File(hInstance, directory, L"Neil_Diamond_-_Solitary_Man.mp3", 156);
-	createMP3File(hInstance, directory, L"Peter_Schilling_-_Major_Tom.mp3", 157);
-	createMP3File(hInstance, directory, L"Pink_Floyd_-_Another_Brick_in_the_Wall.mp3", 158);
-	createMP3File(hInstance, directory, L"The_Police_-_Message_in_a_Bottle.mp3", 159);
-	createMP3File(hInstance, directory, L"The_Who_-_Behind_Blue_Eyes.mp3", 160);
-	createMP3File(hInstance, directory, L"Van_Halen_-_Ain't_Talkin_Bout_Love.mp3", 161);
-	createMP3File(hInstance, directory, L"falling.mp3", 162);
-	createMP3File(hInstance, directory, L"step.mp3", 163);
+	createMP3File(hInstance, directory, L"watchtower.mp3", 152);
+	createMP3File(hInstance, directory, L"achilles.mp3", 153);
+	createMP3File(hInstance, directory, L"wind.mp3", 156);
+	createMP3File(hInstance, directory, L"major.mp3", 157);
 }
 
 // Creates an MP3 file in the provided directory

@@ -8,7 +8,7 @@
 class Chr_QRBadGuy2 : public CharacterBase
 {
 public:
-	Chr_QRBadGuy2(int center_position_x, int center_position_y, int unique_object_ID, WorldSpriteContainer world_sprite, char direction, PlayerDefinition& player, int screen_width, int screen_height, Matrix& world_matrix, std::vector<std::vector<std::pair<int, int>>>& element_has_object, Matrix& screen_matrix, BitmapDefinition& bitmap, AudioDefinition& audio,
+	Chr_QRBadGuy2(int center_position_x, int center_position_y, int unique_object_ID, WorldSpriteContainer world_sprite, char direction, BattleSprite battle_sprite, PlayerDefinition& player, int screen_width, int screen_height, Matrix& world_matrix, std::vector<std::vector<std::pair<int, int>>>& element_has_object, Matrix& screen_matrix, BitmapDefinition& bitmap, AudioDefinition& audio,
 		// START CONFIGURABLE VARIABLES HERE -------------------------------------------------
 
 
@@ -20,22 +20,19 @@ public:
 		// Basic Popup Dialog (Only used if use_basic_dialog == TRUE)
 		PopupDefinition popup_sprite = PopupDefinition("This is my onlyZdialog! helloZ", 'X', 23, 9),
 
-
-		// Advanced ASCII (Highly detailed) and read from a file as a screenshot/image
-		BossFightDefinition boss_fight_definition = BossFightDefinition(
-			11,
-			"QRCode Guy",
-			"Led_Zeppelin_-_Achilles_Last_Stand.mp3",
-			666,
-			666,
-			666,
-			666
-		),//*/
-
 		/* Use Event at end of battle (Whether slay or spare is called) | Must match ID of an actual event in the events folder */
 		int event_ID = 3) // 0 = no event
 
-		: CharacterBase(center_position_x, center_position_y, popup_sprite, unique_object_ID, world_matrix, element_has_object, screen_matrix, screen_width, screen_height, event_ID, player, boss_fight_definition, attack_on_sight, use_basic_dialog, bitmap, audio, world_sprite)
+		: CharacterBase(center_position_x, center_position_y, popup_sprite, unique_object_ID, world_matrix, element_has_object, screen_matrix, screen_width, screen_height, event_ID, player,
+			BossFightDefinition(
+				9, // boss health
+				40, // his smile/eyes (overlay) offset X position
+				20, // his smile/eyes (overlay) offset Y position
+				"QRCode Guy",
+				"achilles.mp3",
+				battle_sprite.getFace(),
+				battle_sprite.getOverlay()
+			), attack_on_sight, use_basic_dialog, bitmap, audio, world_sprite)
 	{
 		faceDirection(direction);
 
@@ -59,43 +56,23 @@ public:
 	/* Creates all attacks */
 	void initializeAttackPatterns(int screen_width, int screen_height, Matrix& screen_matrix, PlayerDefinition& player)
 	{
-		AttackPatternBase* attack_pattern_1 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 75, 250, 50, 'r', 1, 'd', false, false, 0); // [EASY]
-		AttackPatternBase* attack_pattern_2 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 75, 250, 50, 'l', 0, ' ', false, false, 0); // [EASY]
-		AttackPatternBase* attack_pattern_3 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 50, 50, 100, 'r', 1, 'u', false, false, 0); // [EASY] --SINGLECOLUMN
-		AttackPatternBase* attack_pattern_4 = new AttackPattern_Wall(screen_width, screen_height, screen_matrix, player, 20, 9, 1, 500); // [Medium] FAST
-		AttackPatternBase* attack_pattern_5 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 50, 350, 20, 'u', 0, ' ', false, false, 0); // [EASY] --FAST
 		AttackPatternBase* attack_pattern_6 = new VerticleGap_VeryFast(screen_width, screen_height, screen_matrix, player); // [Medium] Fast
-		AttackPatternBase* attack_pattern_7 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 75, 150, 50, 'l', 1, 'u', false, false, 0); // [MEDIUM]
-		AttackPatternBase* attack_pattern_8 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 75, 150, 50, 'r', 0, ' ', false, false, 0); // [MEDIUM]
-		AttackPatternBase* attack_pattern_9 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 50, 250, 20, 'd', 1, 'l', false, false, 0); // [MEDIUM] --FAST
+		AttackPatternBase* attack_pattern_9 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 150, 125, 25, 'd', 1, ' ', false, false, 0); // [MEDIUM] --FAST
 		AttackPatternBase* attack_pattern_10 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 75, 50, 100, 'l', 0, ' ', false, false, 0); // [MEDIUM] --SINGLECOLUMN
-		AttackPatternBase* attack_pattern_11 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 200, 75, 50, 'd', 0, ' ', false, false, 0); // [HARD]
 		AttackPatternBase* attack_pattern_12 = new VerticleGap_Wavy(screen_width, screen_height, screen_matrix, player); // [Hard] Wavy
 		AttackPatternBase* attack_pattern_13 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 150, 120, 25, 'l', 1, 'u', false, false, 0); // [HARD] --FAST
 		AttackPatternBase* attack_pattern_14 = new AttackPattern_CoordinatedStorm(screen_width, screen_height, screen_matrix, player, 200, 50, 50, 'u', 1, ' ', false, false, 0); // [Medium] Symmetrical
-		AttackPatternBase* attack_pattern_15 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 150, 120, 25, 'r', 1, 'd', false, false, 0); // [HARD] --FAST
-		AttackPatternBase* attack_pattern_16 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 100, 30, 100, 'l', 1, 'd', false, false, 0); // [HARD] --SINGLECOLUMN
 		AttackPatternBase* attack_pattern_17 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 200, 75, 50, 'd', 1, 'r', false, false, 0); // [HARD]
 		AttackPatternBase* attack_pattern_18 = new AttackPattern_HailStorm(screen_width, screen_height, screen_matrix, player, 400, 40, 250, 'r', 1, 'd', false, false, 0); // [INSANE] --SINGLECOLUMN
 
 		attack_patterns_.push_back(attack_pattern_18);
 		attack_patterns_.push_back(attack_pattern_17);
-		attack_patterns_.push_back(attack_pattern_16);
-		attack_patterns_.push_back(attack_pattern_15);
 		attack_patterns_.push_back(attack_pattern_14);
 		attack_patterns_.push_back(attack_pattern_13);
 		attack_patterns_.push_back(attack_pattern_12);
-		attack_patterns_.push_back(attack_pattern_11);
 		attack_patterns_.push_back(attack_pattern_10);
 		attack_patterns_.push_back(attack_pattern_9);
-		attack_patterns_.push_back(attack_pattern_8);
-		attack_patterns_.push_back(attack_pattern_7);
 		attack_patterns_.push_back(attack_pattern_6);
-		attack_patterns_.push_back(attack_pattern_5);
-		attack_patterns_.push_back(attack_pattern_4);
-		attack_patterns_.push_back(attack_pattern_3);
-		attack_patterns_.push_back(attack_pattern_2);
-		attack_patterns_.push_back(attack_pattern_1);
 	}
 
 	/* Advanced Dialog	(Shows multiple text screens with dialog options. Leave BLANK for minor characters) */
